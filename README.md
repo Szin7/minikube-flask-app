@@ -117,6 +117,8 @@ kubectl port-forward -n flask-app svc/minikube-flask-app 8080:80
 
 With the port-forward running, the application is available at `http://localhost:8080`.
 
+Any free local port works. For the browser screenshot I used `8083:80` because port 8080 is used by another program on my Windows host.
+
 ## Monitoring
 
 I reused an existing `kube-prometheus-stack` installation in the `monitoring` namespace. The Grafana dashboard, **Minikube Flask App**, uses metrics collected by Prometheus and contains four panels:
@@ -174,9 +176,9 @@ These commit IDs document the **verified v2 test**. Later commits, including doc
 
 ![Argo CD application status and resources](screenshots/argocd-deployment.png)
 
-**Running application:** The deployed Flask application returned HTTP 200 and version `v2`.
+**Running application:** the deployed Flask application showing version `v2` in the browser through the port-forward.
 
-![Flask application HTTP 200 and version v2](screenshots/app-v2.png)
+![Flask application showing version v2](screenshots/app-v2.png)
 
 
 **Grafana:** the dashboard displays CPU, memory, replica and restart metrics for the application.
