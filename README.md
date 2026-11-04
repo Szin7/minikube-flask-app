@@ -180,14 +180,5 @@ These commit IDs document the **verified v2 test**. Later commits, including doc
 
 [Prometheus Pod metrics](screenshots/prometheus-metrics.png) · [Deployment image reference](screenshots/manifest-image-tag.png)
 
-## Problems I worked through
-
-During the setup, I resolved a few practical issues:
-
-- Docker commands were unavailable in WSL until Docker Desktop was running.
-- Docker Hub login failed while the workflow still had a placeholder username.
-- A `.yml`/`.yaml` filename mismatch prevented the workflow from editing the intended manifest.
-- Windows line endings caused problems with some files; `.gitattributes` now enforces LF.
-- Port `8080` was already used by another port-forward session.
 
 This is a local Minikube deployment project, not a publicly hosted application. The focus is the automated deployment path and the monitoring of the running Kubernetes workload.
