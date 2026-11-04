@@ -30,3 +30,24 @@ jobs:
 
       - name: Push image
         run: docker push "$IMAGE_NAME:$IMAGE_TAG"
+
+      - name: Check out manifests repo
+        uses: actions/checkout@v4
+        with:
+          repository: Szin7/minikube-flask-manifests
+          token: ${{ secrets.MANIFESTS_REPO_TOKEN }}
+          path: manifests
+
+      - name: Update image tag in manifests
+        working-directory: manifests
+        run: |
+          sed -i "s|image: .*|image: $IMAGE_NAME:$IMAGE_TAG|" k8s/deployment.yaml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add k8s/deployment.yaml
+          if git diff --cached --quiet; then
+            echo "Image tag already up to date"
+            exit 0
+          fi
+          git commit -m "Update image to $IMAGE_TAG"
+          git push
