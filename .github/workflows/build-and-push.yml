@@ -6,8 +6,8 @@ on:
   workflow_dispatch:
 
 env:
-  DOCKERHUB_USERNAME: <dockerhub-username>
-  IMAGE_NAME: <dockerhub-username>/minikube-flask-app
+  DOCKERHUB_USERNAME: syjinxz77
+  IMAGE_NAME: syjinxz77/minikube-flask-app
 
 jobs:
   build-and-push:
