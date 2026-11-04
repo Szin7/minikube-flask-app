@@ -174,6 +174,11 @@ These commit IDs document the **verified v2 test**. Later commits, including doc
 
 ![Argo CD application status and resources](screenshots/argocd-deployment.png)
 
+**Running application:** The deployed Flask application returned HTTP 200 and version `v2`.
+
+![Flask application HTTP 200 and version v2](screenshots/app-v2.png)
+
+
 **Grafana:** the dashboard displays CPU, memory, replica and restart metrics for the application.
 
 ![Grafana monitoring dashboard](screenshots/grafana-dashboard.png)
