@@ -160,6 +160,11 @@ These commit IDs document the **verified v2 test**. Later commits, including doc
 
 ### Evidence
 
+**Application version change:** I changed `APP_VERSION`
+from `v1` to `v2` in commit `5fd5860`.
+
+![Application version change](screenshots/version-change-v1-v2.png)
+
 **GitHub Actions:** successful workflow after changing the app to `v2`.
 
 ![Successful GitHub Actions workflow](screenshots/github-actions.png)
@@ -171,6 +176,8 @@ These commit IDs document the **verified v2 test**. Later commits, including doc
 **Manifests repository:** the workflow committed the updated image reference.
 
 ![Automated manifests update](screenshots/manifests-update.png)
+
+![Automated image tag update](screenshots/automated-image-update.png)
 
 **Argo CD:** synchronization succeeded and the application was Healthy.
 
